@@ -29,6 +29,7 @@ namespace Sitecore.SocialAggregator
 
         public virtual void Update()
         {
+            Log.Info(string.Format(CultureInfo.InvariantCulture, "Start updating SocialAggregator source {0}", this.GetType().FullName), this);
             var entries = this.DownloadData();
             var root = this.Database.GetItem(this.SaveLocation);
             if (root != null && entries.Any())
@@ -76,7 +77,8 @@ namespace Sitecore.SocialAggregator
                     }
                 }
             }
+            
+            Log.Info(string.Format(CultureInfo.InvariantCulture, "Finished updating SocialAggregator source {0}", this.GetType().FullName), this);
         }
-
     }
 }
