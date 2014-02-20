@@ -30,7 +30,7 @@ namespace Sitecore.SocialAggregator.Sources
             
         }
 
-        protected override IList<Entry> DownloadData()
+        protected override IList<Entry> DownloadData(int count)
         {            
             var oAuthConsumerKey = Configuration.Settings.GetSetting("SocialAggregator.Source.Twitter.SecretKey");
             var oAuthConsumerSecret = Configuration.Settings.GetSetting("SocialAggregator.Source.Twitter.ConsumerSecret");
@@ -65,12 +65,10 @@ namespace Sitecore.SocialAggregator.Sources
             }
 
             authorisationRequest.Headers.Add("Accept-Encoding", "gzip");
-
-            WebResponse authenticationResponse = authorisationRequest.GetResponse();
-            
+                       
             // deserialize into an object
             TwitterAuthenticateResponse twitterAuthResponse;
-            using (authenticationResponse)
+            using (WebResponse authenticationResponse = authorisationRequest.GetResponse())
             {
                 using (var reader = new StreamReader(authenticationResponse.GetResponseStream()))
                 {
@@ -81,18 +79,17 @@ namespace Sitecore.SocialAggregator.Sources
 
             // Do the timeline
             var timelineFormat = Configuration.Settings.GetSetting("SocialAggregator.Source.Twitter.TimelineEndPoint");
-            var tweetCount = Configuration.Settings.GetIntSetting("SocialAggregator.Source.Twitter.TweetCount", 10);
             Assert.IsNotNullOrEmpty(oAuthUrl, "No setting found with the name SocialAggregator.Source.Twitter.TimelineEndPoint.  Please provide one in order to use the Twitter SocialAggregator source");
-            var timelineUrl = string.Format(timelineFormat, username, tweetCount);
+            var timelineUrl = string.Format(timelineFormat, username, count);
             var timeLineRequest = (HttpWebRequest) WebRequest.Create(timelineUrl);
             const string timelineHeaderFormat = "{0} {1}";
             timeLineRequest.Headers.Add("Authorization", 
                 string.Format(timelineHeaderFormat, twitterAuthResponse.token_type,
                                                       twitterAuthResponse.access_token));
             timeLineRequest.Method = "Get";
-            WebResponse timeLineResponse = timeLineRequest.GetResponse();
+            
             string timeLineJson;
-            using (timeLineResponse)
+            using (WebResponse timeLineResponse = timeLineRequest.GetResponse())
             {
                 using (var reader = new StreamReader(timeLineResponse.GetResponseStream()))
                 {

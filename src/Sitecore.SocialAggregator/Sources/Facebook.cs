@@ -23,7 +23,7 @@ namespace Sitecore.SocialAggregator.Sources
             
         }
 
-        protected override IList<Entry> DownloadData()
+        protected override IList<Entry> DownloadData(int count)
         {
             var endpoint = Configuration.Settings.GetSetting("SocialAggregator.Source.Facebook.EndPoint");
             if (string.IsNullOrEmpty(endpoint))
@@ -53,7 +53,7 @@ namespace Sitecore.SocialAggregator.Sources
                     }
                 }
 
-                var postsData = client.DownloadData(string.Format(CultureInfo.InvariantCulture, endpoint, accessToken));
+                var postsData = client.DownloadData(string.Format(CultureInfo.InvariantCulture, endpoint, accessToken, count));
                 var posts = JsonConvert.DeserializeObject<FacebookPosts>(Encoding.Default.GetString(postsData));
                 return posts.data.Cast<Entry>().ToList();
             }
