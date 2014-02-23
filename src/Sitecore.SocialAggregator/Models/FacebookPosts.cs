@@ -239,9 +239,9 @@ namespace Sitecore.SocialAggregator.Models
 
         private static string GetPostUrl(string value)
         {
-            var postPage = Configuration.Settings.GetSetting("SocialAggregator.Source.Facebook.PostUrl");
+            var postPage = Configuration.Settings.GetSetting("SocialAggregator.Source.Facebook.IndividualPost");
             var values = value.Split('_');
-            var result = string.Empty;
+            string result = string.Empty;
             if (values.Length == 2)
             {
                 result = string.Format(CultureInfo.InvariantCulture, postPage, values[1]);

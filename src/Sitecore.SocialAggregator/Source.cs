@@ -1,14 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using Sitecore.SecurityModel;
-using Sitecore.SocialAggregator.Models;
+﻿
 
 namespace Sitecore.SocialAggregator
 {
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
+    using Data;
+    using Data.Items;
+    using Diagnostics;
+    using SecurityModel;
+
     public abstract class Source
     {
         public Database Database { get; set; }
@@ -33,7 +34,7 @@ namespace Sitecore.SocialAggregator
             var root = this.Database.GetItem(this.SaveLocation);
             if (root != null)
             {
-                int entryCount = string.IsNullOrEmpty(root.Fields["number of entries"].Value)
+                int entryCount = !string.IsNullOrEmpty(root.Fields["number of entries"].Value)
                                      ? int.Parse(root.Fields["number of entries"].Value)
                                      : 5;
                 var entries = this.DownloadData(entryCount);

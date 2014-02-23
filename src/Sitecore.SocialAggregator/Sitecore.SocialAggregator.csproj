@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\Scratch\bin\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\Scratch\bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\Scratch\bin\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\Scratch\bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

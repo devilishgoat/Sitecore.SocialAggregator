@@ -20,7 +20,7 @@ namespace Sitecore.SocialAggregator.Sources
 
         public Facebook()
         {
-            
+
         }
 
         protected override IList<Entry> DownloadData(int count)
@@ -28,14 +28,18 @@ namespace Sitecore.SocialAggregator.Sources
             var endpoint = Configuration.Settings.GetSetting("SocialAggregator.Source.Facebook.EndPoint");
             if (string.IsNullOrEmpty(endpoint))
             {
-                Log.Error(string.Format(CultureInfo.InvariantCulture, "Facebook endpoint has not been set.  Unable to connect"), this);
+                Log.Error(
+                    string.Format(CultureInfo.InvariantCulture, "Facebook endpoint has not been set.  Unable to connect"),
+                    this);
                 return new List<Entry>();
             }
 
             var accessToken = Configuration.Settings.GetSetting("SocialAggregator.Source.Facebook.AppToken");
             if (string.IsNullOrEmpty(accessToken))
             {
-                Log.Error(string.Format(CultureInfo.InvariantCulture, "Facebook accss token has not been set.  Unable to connect"), this);
+                Log.Error(
+                    string.Format(CultureInfo.InvariantCulture,
+                                  "Facebook accss token has not been set.  Unable to connect"), this);
                 return new List<Entry>();
             }
 
@@ -53,10 +57,12 @@ namespace Sitecore.SocialAggregator.Sources
                     }
                 }
 
-                var postsData = client.DownloadData(string.Format(CultureInfo.InvariantCulture, endpoint, accessToken, count));
+                var postsData =
+                    client.DownloadData(string.Format(CultureInfo.InvariantCulture, endpoint, accessToken, count));
                 var posts = JsonConvert.DeserializeObject<FacebookPosts>(Encoding.Default.GetString(postsData));
                 return posts.data.Cast<Entry>().ToList();
             }
-        }        
+        }
+
     }
 }
