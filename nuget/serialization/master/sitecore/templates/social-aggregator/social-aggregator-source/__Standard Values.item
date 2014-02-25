@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {44BDE3E9-C118-4C1E-8529-A6A87E562CD4}
+database: master
+path: /sitecore/templates/social-aggregator/social-aggregator-source/__Standard Values
+parent: {BFFEAB25-21C6-4B45-915D-125B42E57CD3}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {BFFEAB25-21C6-4B45-915D-125B42E57CD3}
+templatekey: social-aggregator-source
+
+----version----
+language: en
+version: 1
+revision: 
+
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __revision
+key: __revision
+content-length: 36
+
+0bfeadd8-2569-4715-999b-5bffda52d096
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __created
+key: __created
+content-length: 15
+
+20140210T220039
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __updated
+key: __updated
+content-length: 34
+
+20140210T221007:635276670078085937
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __masters
+key: __masters
+content-length: 38
+
+{295C5A91-8C80-4A35-9B8C-03C0ED99EA04}

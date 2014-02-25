@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Sitecore.SocialAggregator</id>
+        <version>1.0.14</version>
+        <authors>Jason Cox</authors>
+        <owners>Jason Cox</owners>
+        <projectUrl>https://github.com/devilishgoat/Sitecore.SocialAggregator</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Pull data from from a number of social sites so that you can store the data in Sitecore</description>
+        <releaseNotes />
+        <copyright>Copyright 2014</copyright>
+    </metadata>
+    <files>
+        <file src="content\App_Config\Include\Sitecore.SocialAggregator.config" target="content\App_Config\Include\Sitecore.SocialAggregator.config" />
+        <file src="content\bin\Sitecore.SocialAggregator.dll" target="lib\Sitecore.SocialAggregator.dll" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry\Date.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry\Date.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry\External Id.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry\External Id.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry\Message.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry\Message.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry\Url.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry\Url.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\Entry.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\__Standard Values.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry\__Standard Values.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-source\Source\Number of entries.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-source\Source\Number of entries.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-source\Source.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-source\Source.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-source\__Standard Values.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-source\__Standard Values.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-entry.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator\social-aggregator-source.item" target="serialization\master\sitecore\templates\social-aggregator\social-aggregator-source.item" />
+        <file src="serialization\master\sitecore\templates\social-aggregator.item" target="serialization\master\sitecore\templates\social-aggregator.item" />
+        <file src="tools\init.ps1" target="tools\init.ps1" />
+        <file src="tools\install.ps1" target="tools\install.ps1" />
+        <file src="tools\Sitecore.NuGet.1.0.dll" target="tools\Sitecore.NuGet.1.0.dll" />
+        <file src="tools\uninstall.ps1" target="tools\uninstall.ps1" />
+        <file src="wwwroot\App_Config\Include\Sitecore.SocialAggregator.config" target="wwwroot\App_Config\Include\Sitecore.SocialAggregator.config" />
+    </files>
+</package>
